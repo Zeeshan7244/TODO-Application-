@@ -1,0 +1,55 @@
+<html>
+
+<style>
+input[type="text"] {
+	margin : 3px 10px;
+	border-radius : 5px;
+	width : 50%;
+	height  : 50px;
+	font-size : 30px;
+}
+input[type="submit"] {
+	margin : 3px 10px;
+	border-radius : 5px;
+	height  : 50px;
+	font-size : 30px;
+}
+</style>
+
+<body>
+
+    <div>
+   			     <form action="/" method="post">
+   	      
+					    <input type="text" name="todo" placeholder="Enter your task" />
+    			        <br>
+     	 		      <input type="submit" name="submit" value="submit" />
+  	  		    </form>
+    </div>
+
+       <h1> Chef Orders  <h1>
+	   
+	   
+ 		<div id = "todosdiv" >
+		 
+		    
+		
+		 </div>
+</body>
+
+    <script>
+	     	var todos = <%-  todos  %>
+
+			  var html = "";
+			  for(var i =  0 ; i < todos.length ; i++ )  {	  
+				html += "<div>" + todos[i].todo + " : <a href='/deleteTodo/" + todos[i].id +"' >Delete</a></div>"; 
+		 	 
+			  }
+				 
+			document.getElementById("todosdiv").innerHTML = html;
+	      
+   </script>
+   
+ 
+
+</html>
